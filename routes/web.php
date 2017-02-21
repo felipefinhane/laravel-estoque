@@ -20,7 +20,9 @@ Route::get('/', function(){
 Route::get('/produtos', 'ProdutoController@lista');
 //URL COM PARAMETRO ID
 Route::get('/produtos/detalhes/{idProduto?}', 'ProdutoController@detalhes')->where('idProduto', '[0-9]+');
+Route::get('/produtos/remove/{idProduto?}', 'ProdutoController@remove')->where('idProduto', '[0-9]+');
 Route::get('/produtos/novo', 'ProdutoController@novo');
 Route::post('/produtos/adiciona', 'ProdutoController@adiciona');
+Route::match(['get', 'post'],'/produtos/alterar/{idProduto}', 'ProdutoController@alterar')->where('idProduto', '[0-9]+');
 //JSON
 Route::get('/produtos/json', 'ProdutoController@listaJson');

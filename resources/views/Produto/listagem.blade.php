@@ -18,10 +18,16 @@
 		    <td>{{$p->nome}}</td>
 		    <td>{{$p->valor}}</td>
 		    <td>{{$p->descricao or "SEM DESCRIÇÃO"}}</td>
+		    <td>{{$p->tamanho}}</td>
 		    <td>{{$p->quantidade}}</td>
 		    <td>
 		    	<a href="/produtos/detalhes/{{$p->id}}">
-		    	  <span class="glyphicon glyphicon-search">D</span>
+		    	  <span class="glyphicon glyphicon-search"></span>
+					</a>
+		    </td>
+		    <td>
+		    	<a href="/produtos/remove/{{$p->id}}">
+		    	  <span class="glyphicon glyphicon-trash"></span>
 					</a>
 		    </td>
 		  </tr>
